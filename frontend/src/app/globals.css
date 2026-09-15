@@ -1,0 +1,115 @@
+@import "tailwindcss";
+@import "@xyflow/react/dist/style.css";
+
+:root {
+  --bg: #0a0a0b;
+  --panel: #0f0f11;
+  --panel-2: #141417;
+  --border: #1e1e22;
+  --border-2: #26262b;
+  --fg: #ededf0;
+  --fg-2: #a1a1aa;
+  --fg-3: #71717a;
+  --fg-4: #4d4d55;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgba(237, 237, 240, 0.15);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #26262b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #35353c;
+}
+
+.react-flow__attribution {
+  display: none;
+}
+
+.react-flow__controls {
+  box-shadow: none !important;
+}
+
+.react-flow__controls button {
+  background: var(--panel) !important;
+  border: none !important;
+  border-bottom: 1px solid var(--border) !important;
+  color: var(--fg-2) !important;
+  fill: var(--fg-2) !important;
+  width: 28px !important;
+  height: 28px !important;
+}
+
+.react-flow__controls button:last-child {
+  border-bottom: none !important;
+}
+
+.react-flow__controls button:hover {
+  background: var(--panel-2) !important;
+  color: var(--fg) !important;
+  fill: var(--fg) !important;
+}
+
+.react-flow__edge-textbg {
+  fill: var(--bg);
+}
+
+.react-flow__edge-text {
+  font-family: ui-monospace, "SF Mono", monospace;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.react-flow__node {
+  font-family: inherit;
+}
+
+textarea {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulseBar {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scaleY(0.6);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}

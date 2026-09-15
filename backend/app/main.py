@@ -5,6 +5,7 @@ Rhetoric API — HTTP wrapper around the Phase 4 pipeline.
 from __future__ import annotations
 
 import sys
+import os
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException, Request
@@ -45,12 +46,18 @@ MAX_UNITS = 200
 # ---------------------------------------------------------------------------
 app = FastAPI(title="Rhetoric API", version="0.2.0")
 
+CORS_ORIGINS = [
+    origin.strip()
+    for origin in os.getenv(
+        "CORS_ORIGINS",
+        "http://localhost:3000"
+    ).split(",")
+    if origin.strip()
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",
-        # add your Netlify URL here at deploy time
-    ],
+    allow_origins=CORS_ORIGINS,
     allow_methods=["POST", "GET", "OPTIONS"],
     allow_headers=["*"],
 )

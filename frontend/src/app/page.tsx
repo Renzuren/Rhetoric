@@ -144,7 +144,7 @@ export default function Home() {
           </div>
           <div className="flex items-center gap-2 text-[11px] text-[#71717a] font-mono shrink-0">
             <span className="w-1.5 h-1.5 rounded-full bg-[#34d399] animate-pulse" />
-            gemini-2.5-flash
+            gemini-3.5-flash-lite
           </div>
         </header>
 

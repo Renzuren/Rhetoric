@@ -44,7 +44,10 @@ MAX_UNITS = 200
 # ---------------------------------------------------------------------------
 # App + middleware
 # ---------------------------------------------------------------------------
-app = FastAPI(title="Rhetoric API", version="0.2.0")
+app = FastAPI(
+    title="Rhetoric API",
+    version="0.2.0",
+)
 
 CORS_ORIGINS = [
     origin.strip()
@@ -58,7 +61,8 @@ CORS_ORIGINS = [
 app.add_middleware(
     CORSMiddleware,
     allow_origins=CORS_ORIGINS,
-    allow_methods=["POST", "GET", "OPTIONS"],
+    allow_credentials=True,
+    allow_methods=["*"],
     allow_headers=["*"],
 )
 
